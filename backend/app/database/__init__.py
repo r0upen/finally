@@ -1,0 +1,46 @@
+"""SQLite persistence for FinAlly. See planning/DB_INTERFACE.md."""
+
+from .connection import get_connection, init_db, resolve_db_path, utc_now_iso
+from .repository import (
+    ZERO_QTY,
+    DuplicateError,
+    add_watchlist,
+    delete_position,
+    get_cash,
+    get_position,
+    get_positions,
+    insert_chat_message,
+    insert_snapshot,
+    insert_trade,
+    is_zero_qty,
+    list_chat_messages,
+    list_snapshots,
+    list_watchlist,
+    remove_watchlist,
+    set_cash,
+    upsert_position,
+)
+
+__all__ = [
+    "ZERO_QTY",
+    "DuplicateError",
+    "add_watchlist",
+    "delete_position",
+    "get_cash",
+    "get_connection",
+    "get_position",
+    "get_positions",
+    "init_db",
+    "insert_chat_message",
+    "insert_snapshot",
+    "insert_trade",
+    "is_zero_qty",
+    "list_chat_messages",
+    "list_snapshots",
+    "list_watchlist",
+    "remove_watchlist",
+    "resolve_db_path",
+    "set_cash",
+    "upsert_position",
+    "utc_now_iso",
+]

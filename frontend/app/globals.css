@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0d1117;
+  --color-panel: #121821;
+  --color-raised: #19212c;
+  --color-line: #232c38;
+  --color-fg: #c9d3de;
+  --color-bright: #eef2f6;
+  --color-muted: #6b7889;
+  --color-accent: #ecad0a;
+  --color-primary: #209dd7;
+  --color-secondary: #753991;
+  --color-up: #2fb67c;
+  --color-down: #e5484d;
+
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-size: 13px;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Price flash: class applied briefly, background fades out when removed. */
+.flash-target {
+  transition: background-color 500ms ease-out;
+}
+.flash-up {
+  background-color: rgb(47 182 124 / 0.28);
+  transition: none;
+}
+.flash-down {
+  background-color: rgb(229 72 77 / 0.28);
+  transition: none;
+}
+
+:focus-visible {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flash-target {
+    transition: none;
+  }
+}
